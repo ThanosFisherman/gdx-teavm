@@ -488,5 +488,6 @@ public class TeaApplication implements Application, Runnable {
 
     private void initSound() {
         assetLoader.loadScript(true, "howler.js", new AssetLoaderListener<>() {});
+        assetLoader.loadScript(true, "Tone.js", new AssetLoaderListener<>() {});
     }
 }

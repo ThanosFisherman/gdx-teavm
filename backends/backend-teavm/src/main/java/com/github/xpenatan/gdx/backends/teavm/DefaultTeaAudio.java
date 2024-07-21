@@ -7,6 +7,7 @@ import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.github.xpenatan.gdx.backends.teavm.webaudio.howler.HowlerAudioManager;
+import com.github.xpenatan.gdx.backends.teavm.webaudio.tone.Tone;
 
 /**
  * @author xpenatan
@@ -46,6 +47,14 @@ public class DefaultTeaAudio implements TeaAudio {
 
     @Override
     public String[] getAvailableOutputDevices() {
+        // Just using this method temporarily for my experiments
+        // will delete later
+        Tone.start();
+        var synth = Tone.createSynth().toDestination();
+        var polySynth = Tone.createPolySynth().toDestination();
+        synth.playSynth("G4", "8n");
+        polySynth.playSynth("C4", "8n");
+        TeaApplication.print("TONE JS STATE: " + Tone.state());
         return new String[0];
     }
 }

@@ -73,6 +73,7 @@ public class TeaVMInputTest extends InputAdapter implements ApplicationListener 
         }
         if(Gdx.input.isButtonJustPressed(Input.Buttons.LEFT)) {
             Gdx.app.log("TeaVMInputTest", "button pressed: LEFT");
+            Gdx.audio.getAvailableOutputDevices();
         }
         if(Gdx.input.isButtonJustPressed(Input.Buttons.MIDDLE)) {
             Gdx.app.log("TeaVMInputTest", "button pressed: MIDDLE");
